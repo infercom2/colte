@@ -70,8 +70,8 @@ conflicts:
 # This can be binaries or any other files.
 contents:
 
-# Empty folders your package may need created. (overridable)
-empty_folders:
+# Empty folders your package may need created. (overridable) (deprecated)
+#empty_folders:
 
 # Scripts to run at specific stages. (overridable)
 scripts:

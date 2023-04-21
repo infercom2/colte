@@ -93,8 +93,8 @@ contents:
   - src: "./python/coltedb_cn_4g.py"
     dst: "/usr/lib/python3/dist-packages/coltedb_cn_4g.py"
 
-# Empty folders your package may need created. (overridable)
-empty_folders:
+# Empty folders your package may need created. (overridable) (deprecated)
+# empty_folders:
 
 # Scripts to run at specific stages. (overridable)
 scripts:

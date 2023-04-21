@@ -158,9 +158,10 @@ contents:
   #     owner: notRoot
   #     group: notRoot
 
-# Empty folders your package may need created. (overridable)
-empty_folders:
-  - /var/log/colte
+# Empty folders your package may need created. (overridable) (deprecated) now use dir
+#empty_folders:
+  - dst: /var/log/colte
+    type: dir
 
 # Scripts to run at specific stages. (overridable)
 scripts:
