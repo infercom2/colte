@@ -299,7 +299,7 @@ var customer = {
         return rows;
       })
       .then(function (rows) {
-        return customer.transfer_balance(sender_imsi, rows[0].imsi, amount);
+        return customer.transfer_balance(sender_imsi, rows[0].imsi, parseInt(amount));
       });
   },
 
