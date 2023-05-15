@@ -86,6 +86,7 @@ router.post("/update/:user_id", function (req, res) {
   var username = req.body.username;
   var zero_balance_policy_id = req.body.zero_balance_policy;
   var positive_balance_policy_id = req.body.positive_balance_policy;
+  var type_customer = req.body.type_customer;
 
   var enabled = 0;
   if (req.body.enabled == "on") {
@@ -108,7 +109,9 @@ router.post("/update/:user_id", function (req, res) {
       " positive_balance_policy_id=" +
       positive_balance_policy_id +
       " enabled=" +
-      enabled
+      enabled + 
+      " type_customer=" +
+      type_customer
   );
 
   customer
@@ -119,7 +122,8 @@ router.post("/update/:user_id", function (req, res) {
       data_balance,
       zero_balance_policy_id,
       positive_balance_policy_id,
-      username
+      username,
+      type_customer
     )
     .then((data) => {
       res.redirect("/users");

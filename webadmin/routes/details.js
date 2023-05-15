@@ -20,6 +20,7 @@ router.get("/:user_id", function (req, res, next) {
       imsi: imsi,
       bridged: data[0].bridged,
       admin: data[0].admin,
+      type_customer: data[0].type,
     });
   });
 });

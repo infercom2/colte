@@ -129,6 +129,32 @@
                     />
                   {{/if}}
                 </td>
+                <!-- Adding type customer field options available MBB and MiFi -->
+                <td
+                  class="editable"
+                  id="{{this.imsi}}-type-customer"
+                  data-toggle="popover"
+                  title="Edit Customer"
+                  data-content="<label for='type-customer'>Change Type</label>
+                                <select name='type-customer-select' id='{{this.imsi}}-new-type-customer'>
+                                <option selected='selected' value='{{type_customer}}'>{{convertTypeCustomer type_customer}}</option>
+                                <option value='1'>MBB</option>
+                                <option value='2'>MiFi</option>
+                                </select>
+                                <button class='btn btn-danger row-submit' type='submit' onclick='typeCustomerEditSubmit(&quot;{{this.imsi}}&quot;)'> OK </button>"
+                  data-html="true"
+                >
+               {{convertTypeCustomer type_customer}}
+               <input
+                 aria-hidden="true"
+                 value="{{type_customer}}"
+                 class="invisible"
+                 name="type_customer"
+                 id="{{this.imsi}}-type-customer-input"
+               />
+               </td>
+
+
                 <td aria-hidden="true" class="invisible"><button
                     aria-hidden="true"
                     class="btn btn-primary invisible"
