@@ -79,6 +79,20 @@ function transfer_balance_impl(sender_imsi, receiver_imsi, amount, kind) {
           var result =
             "Transfered " + amount + ". New balances are " + sender_bal + " and " + receiver_bal;
           console.log(result);
+          // add knex query to insert a transfer to the haulage history
+          var rval2 = knex
+            .insert(
+              [
+                {date:dateTime(),"sender_imsi": sender_imsi,"receiver_imsi": receiver_imsi,
+                "amount": parseInt(amount),"type_transfer": kind}
+              ]
+            )
+            .into("transfers_history")
+            .catch (function (error) {
+              throw new Error(error.sqlMessage);
+            });
+          return rval2;
+
 
           fs.appendFile(
             transaction_log,
@@ -234,7 +248,17 @@ var customer = {
           .catch(function (error) {
             throw new Error(error.sqlMessage);
           });
-
+        // Add knex query to insert haualage db history
+        var rval2 =knex
+           .insert(
+            [
+              {date: dateTime() ,"imsi": imsi,amount: parseInt(delta)}
+            ]
+          )
+          .into("topup_sales_history")
+          .catch (function (error) {
+             throw new Error(error.sqlMessage);
+          });
         fs.appendFile(
           transaction_log,
           dateTime() + " TOPUP " + imsi + " " + delta + "\n",
@@ -318,6 +342,17 @@ var customer = {
             .catch((error) => {
               throw new Error(error.sqlMessage);
             });
+          // Add knex query to insert haualage db history and convert data values into MB
+          var rval2 =knex
+            .insert(
+            [
+              {date: dateTime() ,"imsi": imsi,"cost": parseInt(cost), "data": parseInt(data / 1000000)}
+            ]
+          )
+          .into("packages_sales_history")
+          .catch (function (error) {
+             throw new Error(error.sqlMessage);
+          });
 
           fs.appendFile(
             transaction_log,
