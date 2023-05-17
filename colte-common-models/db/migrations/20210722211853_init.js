@@ -43,7 +43,7 @@ exports.up = function (knex) {
       table.increments("id").notNullable().primary();
       table.string("name").notNullable();
       table.string("type_package").notNullable();
-      table.string("type_users").notNullable().references("customers.type").defaultTo(1);
+      table.string("type_users").notNullable().defaultTo(1);
       table.integer("days_of_use");
     })
     .createTable("topup_sales_history", (table) => {
