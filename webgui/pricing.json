@@ -3,49 +3,49 @@
     {
       "print_bytes": "1 GB",
       "print_cost": "25",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 1000000000,
       "cost": 25
     },
     {
       "print_bytes": "3 GB",
       "print_cost": "38",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 3000000000,
       "cost": 38
     },
     {
       "print_bytes": "5 GB",
       "print_cost": "65",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 5000000000,
       "cost": 65
     },
     {
       "print_bytes": "10 GB",
       "print_cost": "95",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 10000000000,
       "cost": 95
     },
     {
       "print_bytes": "20 GB",
       "print_cost": "110",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 20000000000,
       "cost": 110
     },
     {
       "print_bytes": "40 GB",
       "print_cost": "170",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 40000000000,
       "cost": 170
     },
     {
       "print_bytes": "80 GB",
       "print_cost": "270",
-      "currency_symbol": "MXN",
+      "currency_symbol": "$",
       "bytes": 80000000000,
       "cost": 270
     }
