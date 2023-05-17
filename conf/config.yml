@@ -1,14 +1,14 @@
 # REMEMBER TO CALL "sudo colteconf update" AFTER CHANGING THIS FILE!
 
 # basic network settings
-enb_iface_addr: 1.2.3.4
+enb_iface_addr: 192.168.20.1
 wan_iface: eth0
-network_name: bokondini
+network_name: test
 lte_subnet: 10.45.0.0/16
 
 # PLMN = first 5 digits of IMSI = MCC+MNC
-mcc: 910
-mnc: 54
+mcc: 334
+mnc: 07
 
 # advanced EPC settings
 dns: 8.8.8.8
