@@ -124,6 +124,7 @@ var customer = {
         "customers.enabled as enabled",
         "customers.admin as admin",
         "customers.username as username",
+        "customers.type as type_customer",
         "subscribers.data_balance as data_balance",
         "subscribers.current_policy as current_policy_id",
         "subscribers.zero_balance_policy as zero_policy_id",
@@ -143,7 +144,8 @@ var customer = {
         "subscribers.data_balance as data_balance",
         "customers.msisdn as msisdn",
         "customers.admin as admin",
-        "customers.username as username"
+        "customers.username as username",
+        "customers.type as type_customer"
       )
       .from("customers")
       .join("static_ips", "customers.imsi", "=", "static_ips.imsi")
@@ -172,7 +174,8 @@ var customer = {
     data_balance,
     zero_balance_policy_id,
     positive_balance_policy_id,
-    username
+    username,
+    type_customer
   ) {
     return knex.transaction((trx) => {
       return trx
@@ -180,6 +183,7 @@ var customer = {
           balance: balance,
           enabled: enabled,
           username: username,
+          type: type_customer,
         })
         .where("imsi", imsi)
         .from("customers")
