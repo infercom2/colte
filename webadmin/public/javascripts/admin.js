@@ -82,16 +82,16 @@ $(document).ready(function () {
   });
 });
 
-// Populate form matching the imsi with the default (given) information about the username, data balance, balance.
+// Populate form matching the imsi with the default (given) information about the username, data balance, balance, type_customer.
 // Update the desired field with user input.
-var submit = function (type, imsi, username, dataBalance, balance) {
+var submit = function (type, imsi, username, dataBalance, balance,typeCustomer) {
   document.getElementById(imsi + "-" + type + "-input").value = document.getElementById(
     imsi + "-" + "new-" + type
   ).value;
   submitHelper(imsi, username, dataBalance, balance);
 };
 
-var submitHelper = function (imsi, username, dataBalance, balance) {
+var submitHelper = function (imsi, username, dataBalance, balance,typeCustomer) {
   if (username) {
     document.getElementById(imsi + "-username-input").value = username;
   }
@@ -102,6 +102,9 @@ var submitHelper = function (imsi, username, dataBalance, balance) {
 
   if (balance) {
     document.getElementById(imsi + "-balance-input").value = balance;
+  }
+  if (typeCustomer) {
+    document.getElementById(imsi + "-type-customer-input").value = typeCustomer;
   }
 
   document.getElementById(imsi + "-submit").click();
@@ -132,7 +135,8 @@ var checkboxSubmit = function (imsi) {
   var username = document.getElementById(imsi + "-username").textContent.trim();
   var balance = document.getElementById(imsi + "-balance-input").value.trim();
   var dataBalance = document.getElementById(imsi + "-data-balance-input").value.trim();
-  submitHelper(imsi, username, dataBalance, balance);
+  var typeCustomer = document.getElementById(imsi + "-type-customer-input").value.trim();
+  submitHelper(imsi, username, dataBalance, balance,typeCustomer);
 };
 
 var policyEditSubmit = function (imsi) {
@@ -145,4 +149,10 @@ var policyEditSubmit = function (imsi) {
   document.getElementById(imsi + "-zero-balance-policy-input").value = newZeroPolicy;
   document.getElementById(imsi + "-submit").click();
   console.log("Submitting policy edit" + imsi);
+};
+// Update TypeCustomer
+var typeCustomerEditSubmit = function (imsi) {
+  var typeCustomer = document.getElementById(imsi + "-type-customer-input").value.trim();
+  submit("type-customer", imsi);
+        alert('type-customer value: ' + type_customer + imsi)
 };
