@@ -346,7 +346,7 @@ var customer = {
           var rval2 =knex
             .insert(
             [
-              {date: dateTime() ,"imsi": imsi,"cost": parseInt(cost), "data": parseInt(data / 1000000)}
+              {date: dateTime() ,"imsi": imsi,"cost": parseInt(cost), "data_mb": parseInt(data/ 1000000)}
             ]
           )
           .into("packages_sales_history")
