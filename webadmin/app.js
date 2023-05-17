@@ -139,6 +139,22 @@ fs.appendFile(transaction_log, "", function (err) {
     process.exit(1);
   }
 });
+// Convert readeable user options
+// Exist two options MBB - for Mobile Users and MiFi for LTE Devices 
+// To convert WiFi Signal
+function convertTypeCustomer(type_customer){
+   if (type_customer == 1 ){
+     return "MBB";
+   }
+   else if (type_customer == 2){
+     return "MiFi";
+   }
+   else
+     return "Incorrect Value";
+}
+module.exports.convertTypeCustomer = convertTypeCustomer;
+hbs.registerHelper("convertTypeCustomer", convertTypeCustomer);
+
 
 // ratelimit requests from each endpoint to prevent trivial ddos
 // set up rate limiter: maximum of five requests per user per second
