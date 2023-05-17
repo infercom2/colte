@@ -22,6 +22,7 @@ router.get("/", function (req, res, next) {
         raw_down_str: raw_down_str,
         balance: data[0].balance,
         data_balance_str: data_balance_str,
+        imsi: data[0].imsi,
         msisdn: data[0].msisdn,
         admin: data[0].admin,
         services: app.services,
@@ -35,6 +36,7 @@ router.get("/", function (req, res, next) {
         raw_down_str: 0,
         balance: 0,
         data_balance_str: "unknown",
+        imsi:"unknown"
         msisdn: "uknown",
         admin: false,
         services: app.services,
