@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import psycopg2
-
+## These values should be changed in a production installation
 conn = psycopg2.connect(database = "haulage_db",
         user = "haulage_db",
         host = "localhost",
