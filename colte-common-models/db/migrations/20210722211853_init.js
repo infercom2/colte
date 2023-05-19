@@ -22,7 +22,6 @@ exports.up = function (knex) {
       table.bigInteger("pending_data_balance");
       table.uuid("pending_data_balance_txn");
       table.integer("type").references("type_customers.id").defaultTo(1);
-
     })
     .createTable("actions", (table) => {
       table.increments("id").notNullable().primary();
@@ -76,6 +75,7 @@ exports.up = function (knex) {
 exports.down = function (knex) {
   return knex.schema
     .dropTable("audit_customers")
+    .dropTable("type_customers")
     .dropTable("customers")
     .dropTable("currencies")
     .dropTable("actions")

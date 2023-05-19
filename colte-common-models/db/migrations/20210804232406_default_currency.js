@@ -1,6 +1,6 @@
 exports.up = function (knex) {
   return knex.transaction((trx) => {
-    return trx.insert([{code: "MXN", name: "MXN", symbol: "$"}]).into("currencies");
+    return trx.insert([{code: "XXX", name: "UNKNOWN", symbol: "$"}]).into("currencies");
   });
 };
 
